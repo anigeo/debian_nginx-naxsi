@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:wheezy
 #
 
 RUN echo deb http://http.debian.net/debian wheezy-backports main >> /etc/apt/sources.list \
