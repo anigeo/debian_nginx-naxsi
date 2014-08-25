@@ -1,6 +1,7 @@
 FROM debian:wheezy
 
-RUN echo deb http://http.debian.net/debian wheezy-backports main >> /etc/apt/sources.list \
+RUN \
+	echo deb http://http.debian.net/debian wheezy-backports main >> /etc/apt/sources.list \
 	&& echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/99norecommends \
 	&& sed -i 's/deb/deb [arch=amd64]/' /etc/apt/sources.list \
 	&& apt-get update \
@@ -16,4 +17,6 @@ RUN echo deb http://http.debian.net/debian wheezy-backports main >> /etc/apt/sou
 	&& sed -i 's|error_log /var/log/nginx/error.log|error_log /dev/null|' /etc/nginx/nginx.conf
 
 EXPOSE 80
-CMD ["service", "nginx-naxsi-ui", "start", "&&", "nginx"]
+CMD \
+	/etc/init.d/nginx-naxsi-ui start \
+	&& nginx
