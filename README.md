@@ -1,6 +1,6 @@
 # Nginx with Naxsi on Debian Wheezy Backports
 
-Automatic docker image build with nginx-naxsi wheezy-backports packages.
+Automatic docker image build with nginx-naxsi wheezy-backports packages.  Visit https://packages.debian.org/wheezy-backports/nginx-naxsi for package detail.
 
 ## Usage
 ```Shell
